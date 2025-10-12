@@ -24,8 +24,8 @@ body {
 .photo-box {
  width: 180px;
  height: 180px;
- border: 8px solid black; /* 写真の黒い枠 */
- background-color: white;
+ border: 8px solid #343b55; 
+ background-color: #d7edf8;
  overflow: hidden; /* 枠から画像がはみ出ないようにする */ }
 
 .photo-box img {
