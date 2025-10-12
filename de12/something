@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>写真と文章のレイアウト</title>
+ <link rel="stylesheet" href="./css/ghvjj"> </head> <body>  <div class="container">
+   <div class="photo-box">
+     <img src="photo.jpg" alt="写真の説明">
+   </div>
+   <div class="text-box">
+     <ul>
+       <li>写真についての文章</li>
+       <li>写真に関する感想</li>
+       <li>・・・</li>
+       <li>・・・</li>
+     </ul>
+   </div>
+ </div>
+</body>

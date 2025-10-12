@@ -1,0 +1,34 @@
+body {
+	font-size: 16px;
+	font-family: sans-serif;
+	color: #343b55;
+    margin-left: 15px;
+    margin-bottom: 40px;
+	background: #d7edf8;
+}
+
+.container {
+ display: flex;
+ align-items: center;
+ gap: 40px; /* 写真と文章の間のスペース */
+}
+
+.photo-box {
+ width: 180px;
+ height: 180px;
+ border: 8px solid black; /* 写真の黒い枠 */
+ background-color: white;
+ overflow: hidden; /* 枠から画像がはみ出ないようにする */ }
+
+.photo-box img {
+ width: 100%;
+ height: 100%;
+ object-fit: cover; /* 画像の縦横比を保ちながら枠いっぱいに表示 */ }
+
+.text-box ul {
+ list-style-type: none;
+ padding: 0;
+ margin: 0;
+ font-size: 18px;
+ line-height: 2;
+}
