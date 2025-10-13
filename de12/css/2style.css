@@ -4,64 +4,63 @@ html, body {
 	font-size: 16px;
 	font-family: sans-serif;
     color:#343b55;
-    margin-left: 15px;
+    margin-left: 0px;
     margin-bottom: 40px;
     background:#d7edf8;
 	
 }
+*{
+    padding: 0;
+    margin: 0;
+    margin-left: 0;
+}
+header{
+    background-color: white;
+}
+.big-text{
+    font-size: 40px;
+}
 .container {
  display: flex;
  align-items: center;
- gap: 20px; /* 写真と文章の間のスペース */
+ gap: 30px; /* 写真と文章の間のスペース */
 }
 h1{
     text-indent: 0em;
+    padding-top: 0.5em;
+    padding-bottom: 0.7em;
 }
 h2{
     margin-left: 1em;
-    margin-top: 1em;
+    margin-top: 0em;
 }
 h3{
-    margin-left: 2em;
+    margin-left: 0em;
 }
 div{
     margin-top: 1em;
+    margin-bottom: 1em;
     margin-left: 3em;
+    margin-right: 2em;
 }
-p{
-    margin-left: 3em;
-}
+
 span.blackback{
     text-indent: 3em;
     background:#d7edf8;
     color:#343b55;
 }
 
-
+.box{
+    padding: 0em 0em;
+    margin: 0em;
+    margin-left: 0;
+    background: white;
+    box-shadow: 0px 0px 0px 0px white;
+}
 .text-box1{
-    padding: 1em 3em;
-    margin: 2em 0;
+    padding: 2.2em 2.5em;
+    margin: 0.5em 0;
     background: #d7edf8;
     box-shadow: 0px 0px 0px 10px #d7edf8;
     border: solid 2px #59617e;
-}
-.box1 p {
-    margin: 0; 
-    padding: 0;
-}
-
-h1 {
-  color: #343b55;/*文字色*/
-  padding: 0.5em 0;/*上下の余白*/
-}
- .box2{
-    padding: 0.2em 0.5em;
-    margin: 2em 0;
-    background: #d7edf8;
-    box-shadow: 0px 0px 0px 10px #d7edf8;
-    border: solid 2px #343b55;
-}
-.box2 p {
-    margin: 0; 
-    padding: 0;
 }
