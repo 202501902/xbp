@@ -1,0 +1,70 @@
+html, body {
+
+    
+	font-size: 16px;
+	font-family: sans-serif;
+    color:#424d74;
+    margin-left: 0px;
+    margin-bottom: 40px;
+    background:#d7edf8;
+	
+}
+*{
+    padding: 0;
+    margin: 0;
+    margin-left: 0;
+}
+header{
+    background-color: #e1f4fd;
+}
+.big-text{
+    font-size: 40px;
+}
+.container {
+ display: flex;
+ align-items: center;
+ gap: 40px; /* 写真と文章の間のスペース */
+}
+h1{
+    text-indent: 0em;
+    padding-top: 0.5em;
+    padding-bottom: 0.7em;
+    color:#343b55;
+}
+h2{
+    margin-left: 0em;
+    margin-bottom: 0.3em;
+    color:#343b55;
+}
+h3{
+    margin-left: 0em;
+    color:#343b55;
+}
+div{
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 3em;
+    margin-right: 2em;
+
+}
+
+span.blackback{
+    text-indent: 3em;
+    background:#d7edf8;
+    color:#343b55;
+}
+
+.box{
+    padding: 0em 0em;
+    margin: 0em;
+    margin-left: 0;
+    background: white;
+    box-shadow: 0px 0px 0px 0px white;
+}
+.text-box1{
+    padding: 1em 1em;
+    margin: 0em;
+    background: #e8f7ff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
