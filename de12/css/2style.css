@@ -6,41 +6,7 @@ html, body {
     margin: 0;
     padding: 0;
 }
-.bg_pattern {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: #fefefe;
-    
-  }
-.Paper_v2 {
-    background-image:
-      repeating-linear-gradient(to bottom,
-        transparent 25px,
-        rgba(0, 0, 0, 0.04) 26px,  rgba(0, 0, 0, 0.04) 26px,
-        transparent 27px,  transparent 51px, 
-        rgba(0, 0, 0, 0.04) 52px,  rgba(0, 0, 0, 0.04) 52px,
-        transparent 53px,  transparent 77px, 
-        rgba(0, 0, 0, 0.04) 78px,  rgba(0, 0, 0, 0.04) 78px,
-        transparent 79px,  transparent 103px, 
-        rgba(0, 0, 0, 0.04) 104px,  rgba(0, 0, 0, 0.04) 104px,
-        transparent 105px,  transparent 129px, 
-        rgba(0, 0, 0, 0.04) 130px,  rgba(0, 0, 0, 0.04) 130px),
-    
-      repeating-linear-gradient(to right,
-        transparent 25px,
-        rgba(0, 0, 0, 0.04) 26px,  rgba(0, 0, 0, 0.04) 26px,
-        transparent 27px,  transparent 51px, 
-        rgba(0, 0, 0, 0.04) 52px,  rgba(0, 0, 0, 0.04) 52px,
-        transparent 53px,  transparent 77px, 
-        rgba(0, 0, 0, 0.04) 78px,  rgba(0, 0, 0, 0.04) 78px,
-        transparent 79px,  transparent 103px, 
-        rgba(0, 0, 0, 0.04) 104px,  rgba(0, 0, 0, 0.04) 104px,
-        transparent 105px,  transparent 129px, 
-        rgba(0, 0, 0, 0.04) 130px,  rgba(0, 0, 0, 0.04) 130px);
-  }
+
 *{
     padding: 0;
     margin: 0;
@@ -50,11 +16,11 @@ html, body {
     font-size: 40px;
 }
 .container {
-    margin: 0;
+    margin-left: 20;
     padding: 0;
     display: flex;
     align-items: center;
-    gap: 30px; /* 写真と文章の間のスペース */
+    gap: 50px; /* 写真と文章の間のスペース */
 }
 h1{
     text-indent: 0em;
