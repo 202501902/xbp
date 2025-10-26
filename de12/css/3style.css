@@ -20,15 +20,15 @@ html, body {
     margin-left: 20;
     padding: 0;
     display: flex;
-    gap: 50px; /* 写真と文章の間のスペース */
-    text-align: center;
+    gap: 10px; /* 写真と文章の間のスペース */
+    
     
     justify-content: center;
 }
 h1{
     text-indent: 0em;
     padding-top: 0.5em;
-    padding-bottom: 0.7em;
+    padding-bottom: 0em;
 }
 h2{
     margin-left: 0em;
@@ -57,21 +57,35 @@ span.blackback{
     margin: 0em;
     margin-left: 0;
     background: #f7fcff;
-    box-shadow: 0 0 10px #083d5c(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px #011c2c(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
 }
 .text-box1{
+    padding: 2em 3em;
+    margin-left: 5em;
+    margin-right: 5em;
+    background: #f7fcff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: left;
+}
+.text-box2{
+    padding: 0.5em;
+    margin: 0em;
+    margin-bottom: 0.5em;
+    background: #f7fcff;
+    box-shadow: 0 0px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    text-align: center;
+}
+textarea{
+    flex: 1;
+    flex-direction: column;
     padding: 2em 3em;
     margin: 0em;
     background: #f7fcff;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     text-align: left;
-}
-.text-box2{
-    padding: 2em 3em;
-    margin: 0em;
-    background: #f7fcff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    text-align: center;
 }
