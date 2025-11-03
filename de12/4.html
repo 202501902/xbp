@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>やぎの第４回</title>
+     <link rel="stylesheet" href="./css/4style.css">
+</head>
+<div class="bg_pattern stripe-background"></div>
+<style>
+ .bg_pattern {
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    
+    z-index: -1;
+  }
+  .stripe-background{
+    background-color: #fff;
+    background-image: 
+        repeating-linear-gradient(45deg, rgba(160, 160, 160, 0.1) 0,rgba(160, 160, 160, 0.1) 2px,transparent 2px,transparent 40px),
+        repeating-linear-gradient(-45deg,rgba(160, 160, 160, 0.1) 0,rgba(160, 160, 160, 0.1) 2px,transparent 2px,transparent 40px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+  }
+  </style>
+
+
+<body>
+    <div class="text-box2"><h1><p class="big-text">　デザイン演習Ⅰ.Ⅱ　第４回</p></h1><br></div>
+
+    <h1 style="text-align:center">Python</h1>
+    
+    <div class="text-box1">
+        <h2>《 うちなんちゅレベルクイズ 》</h2>
+        私は今回、その名の通りゲームをプレイした人のうちなんちゅレベルを図るゲームを作成した。<br>
+        私の実体験や普段食べている沖縄ならではのものを問題にした。
+
+    </div>
+
+
+    <div class="text-box1">
+      <h2>《 ソースコード 》</h2>
+     
+     
+      #ーーーーーGAMESTARTーーーーー<br>
+print("===============🌺うちなんちゅレベルクイズ🌺===============")<br>
+name=input("あなたの名前を入力してください： ")<br>
+print()<br>
+print(name,"さん！これから方言やうちなんちゅの日常に関する問題を出すよ！")<br>
+print("あなたのうちなんちゅレベルはどれくらいかな？？")<br>
+print("正解だと思う選択肢の番号を全角で入力してね！")<br>
+print()<br>
+score=0<br><br>
+
+#Q1<br>
+print()<br>
+print("Q1.「ちーち－かーかーする」とはどういう状態？")<br>
+print("１. 視界が悪くなってちかちかする状態")<br>
+print("２. ぱさぱさして喉が渇いた状態")<br>
+print("３. 全力で走って息が切れた状態")<br>
+ans=input("➔ あなたの答え： ")<br>
+if ans=="２":<br>
+    print()<br>
+    print("正解！サーターアンダギーを食べたあとはちーちーかーかーするよ😿")<br>
+    score+=1<br>
+else:<br>
+    print()<br>
+    print("おしい！正解は「２. ぱさぱさして喉が渇いた状態」でした！")<br><br>
+
+#Q2<br>
+print()<br>
+print("Q2. 結婚式でみんなで踊るのは何？")<br>
+print("１. 盆踊り")<br>
+print("２. カチャーシー")<br>
+print("３. フラダンス")<br>
+ans=input("➔ あなたの答え： ")<br>
+if ans=="２":<br>
+    print()<br>
+    print("正解！あなたも一緒に踊ろう🎶🎶")<br>
+    score+=1<br>
+else:<br>
+    print()<br>
+    print("残念！正解は「２. カチャーシー」でした！")<br><br>
+
+#Q3<br>
+print()<br>
+print("Q3. 「ハーリー」は何の行事？")<br>
+print("１. 綱引き")<br>
+print("２. 獅子舞見物")<br>
+print("３. 船漕ぎのレース")<br>
+ans=input("➔ あなたの答え： ")<br>
+if ans=="３":<br>
+    print()<br>
+    print("正解！毎年沖縄各地で開催されるよ⭐")<br>
+    score+=1<br>
+else:<br>
+    print()<br>
+    print("間違い！正解は「３. 船漕ぎのレース」でした！")<br><br>
+
+#Q4<br>
+print()<br>
+print("Q4.「うりひゃーさーさー」とはどういうときに使う言葉？")<br>
+print("１. 驚いたとき")<br>
+print("２. 面白かったとき")<br>
+print("３. 怒ったとき")<br>
+ans=input("➔ あなたの答え： ")<br>
+if ans=="１":<br>
+    print()<br>
+    print("正解！私の祖父母がよく驚いたときに使ってるよ👍")<br>
+    score+=1<br>
+else:<br>
+    print()<br>
+    print("もうちょい！正解は「１. 驚いたとき」でした！")<br><br>
+
+#Q5<br>
+print()<br>
+print("Q5.「ヒラヤーチー」はどんな食べ物？")<br>
+print("１. 沖縄風たこ焼き")<br>
+print("２. 沖縄風お好み焼き")<br>
+print("３. 沖縄風ピザ")<br>
+ans=input("➔ あなたの答え： ")<br>
+if ans=="２":<br>
+    print()<br>
+    print("正解！オイスターソースをかけたらとても美味しいよ😋")<br>
+    score+=1<br>
+else:<br>
+    print()<br>
+    print("ハズレ～！正解は「２. 沖縄風お好み焼き」でした！")<br><br>
+
+#ー結果ー<br>
+print()<br>
+print("===============✨結果発表✨===============")<br>
+print(name, "さんの正解数は" ,score, "問でした！")<br>
+if score==5:<br>
+    print("うちなんちゅレベルMAX！まぎーうちなんちゅだね🌺")<br>
+elif score>=4:<br>
+    print("いい感じ！うちなんちゅ予備軍だね🌺")<br>
+elif score>=2:<br>
+    print("うちなんちゅ見習いだね！まだまだこれからさ～🌺")<br>
+else:<br>
+    print("まだまだ本土んちゅだね！")<br>
+print()<br>
+print("🌺お付き合いいただきありがとう！にふぇ～で～びたん🌺")<br>
+#ーーーーーFINISHーーーーー<br><br>
+    </div><br>
+
+
+    <div class="text-box1">
+      <h2>《 考察 》</h2>
+      　・親子の色や柄のある服を着ている率が高かった。<br>
+      　　　➔明るくポジティブな雰囲気を感じる。<br>
+      　　　➔汚れが目立ちにくい。<br>
+      　・付近にはオフィスビルが並んでいるため、スーツを着ている人もいた。<br>
+
+    </div>
+    
+    <div class="text-box1">
+      <h2>《 振り返り 》</h2>
+      ２つの観察対象だけでは、深い考察を行うには難しいと感じた。<br>
+      例えば、モノクロの服を着ている人の中にはスーツ姿の人も見られたため、「スーツを着ている (上半身がシャツも含む) 人orそれ以外の人」に
+      分けて記録したり、アンパンマンミュージアム付近という立地を踏まえて「大人 or子ども」に分けて記録したりすると、より面白く深い考察が
+      できたのではないかと考えた。
+    </div><br><br>
+    
+    <div>
+        <h2>参考にしたもの</h2>
+        <a href="https://naakosan.github.io/xbp/de12/game.html">2024なーこさんのwebページ</a>
+    </div>
+
+
+</body>
