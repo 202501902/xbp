@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>第３回　やぎのスロット</title>
+     <link rel="stylesheet" href="./css/digi2.style.css">
+</head>
+
+<div class="bg_pattern stripe-background">
+<style>
+.bg_pattern {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #ffffff;
+  opacity: 0.4;
+  z-index: -1;
+}
+.Polka_v2 {
+  background-image:  radial-gradient(#b0e2ff 2px, transparent 2px), radial-gradient(#acbdee 2px, #ffffff 2px);
+  background-size: 40px 40px;
+  background-position: 0 0,20px 20px;
+}
+</style></div>
+
+<body>
+    <div class="headar"><h1>　デジタルファブリケーション　第２回</h1><br></div><br><br><br><br>
+
+        <h1 style="text-align:center">スロット</h1>
+    
+    <div class="text-box1">
+        <h2>《 ストーリーボード 》</h2>
+        レーザーカッティングで人の心を動かすものという課題だったため、人を明るくさせるものを作りたいと考えた。<br>
+        何を作ろうかと迷っている際にギャンブル好きの推しがスロット配信をしているのを見て、スロットを作れたら面白いなと感じこの作品を作るに至った。<br>
+        <img src="./images/slot.photo3.jpg"width="25%" alt="写真の説明">
+        <img src="./images/slot.photo2.jpg"width="25%" alt="写真の説明">
+    </div>
+
+    <div class="text-box1">
+        <h2>《 完成品 》</h2>
+        <img src="./images/slot.jpg"width="25%" alt="写真の説明">
+        <img src="./images/slot2.jpg"width="25%" alt="写真の説明">
+        <img src="./images/slot3.jpg"width="25%" alt="写真の説明">
+    </div>
+
+</body>
