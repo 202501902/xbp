@@ -69,7 +69,7 @@ span.blackback{
     margin-bottom: 1em;
     background: #f7fcff;
     box-shadow: 0 2px 9px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+    
     text-align: left;
     display: flex;
     justify-content: space-between;
