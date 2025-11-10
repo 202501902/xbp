@@ -1,0 +1,135 @@
+<html lang="jp">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>やぎの第５回</title>
+     <link rel="stylesheet" href="./css/5style.css">
+</head>
+
+<div class="bg_pattern stripe-background">
+<style>
+ .bg_pattern {
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    
+    z-index: -1;
+  }
+  .stripe-background{
+    background-color: #fff;
+    background-image: 
+        repeating-linear-gradient(45deg, rgba(160, 160, 160, 0.1) 0,rgba(160, 160, 160, 0.1) 2px,transparent 2px,transparent 40px),
+        repeating-linear-gradient(-45deg,rgba(160, 160, 160, 0.1) 0,rgba(160, 160, 160, 0.1) 2px,transparent 2px,transparent 40px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+  }
+  </style>
+</div>
+
+<body>
+    <div class="headar"><h1>　デザイン演習Ⅰ.Ⅱ　第５回</h1><br></div><br><br><br><br>
+
+        <h1 style="text-align:center">プログラミング</h1>
+    
+    <div class="text-box1">
+        <h2>《 ダメンズマニュアル 》</h2>
+        誰もが一度は出会う可能性のある　“ちょっと困った人”。<br>
+        いつか関わる機会があった際、どう向き合うかを学ぶためにこのサイトを作りました。
+        そういった人たちの特徴や具体例、適切な対応法について、AIを使用しました。
+    </div>
+
+    <div class="text-box2">
+        <h2>《 ソースコード 》</h2>
+        <pre><code>
+import tkinter as tk
+from tkinter import scrolledtext
+from openai import OpenAI
+
+#ChatGPT 
+client = OpenAI(api_key="")
+
+def ask_chatgpt(type_name):
+    prompt = f"""
+    あなたは性格分析の専門家です。
+    「{type_name}」というタイプの人について、以下を日本語で詳しく説明してください。
+     １．特徴（３～５個）
+     ２．具体例（２～３個）
+     ３．適切な対応法（２～３個）
+     出力する際は、見やすく箇条書きで書いてください。
+     """
+    
+    try:
+        res = client.chat.completions.create(
+            model = "gpt-4o-mini",
+            messages = [{"role": "user", "content": prompt}]
+        ) 
+        answer = res.choices[0].message.content
+        output_box.delete(1.0, tk.END)
+        output_box.insert(tk.END, f"【{type_name}】\n\n{answer}")
+    except Exception as e:
+        output_box.delete(1.0, tk.END) 
+        output_box.insert(tk.END, f"エラーが発生しました: {e}") 
+
+# --- GUIの設定 --- 
+root = tk.Tk() 
+root.title("性格タイプ分析（ChatGPT連携）") 
+root.geometry("600x500") 
+root.config(bg="#f7f9fc") 
+
+
+title_label = tk.Label(
+    root, text="悪性格タイプを選んでください", font=("Meiryo", 14, "bold"), bg="#f7f9fc" 
+)
+title_label.pack(pady=10) 
+
+#タイプボタン
+types = ["ノンデリ","自己中心","マウント取り","愚痴・悪口","被害者ぶり"]
+
+button_frame = tk.Frame(root, bg="#f7f9fc")
+button_frame.pack(pady=5)
+
+for t in types:
+    btn = tk.Button(
+        button_frame,
+        text=t,
+        width=25,
+        height=2,
+        bg="#ffffff",
+        fg="#333333",
+        relief="ridge",
+        command=lambda name=t: ask_chatgpt(name)
+    ) 
+    btn.pack(pady=4)
+
+#出力ボックス
+output_box = scrolledtext.ScrolledText(root, wrap=tk.WORD, width=70, height=15, font=("Meiryo", 11)) 
+output_box.pack(padx=10, pady=10)
+
+ #終了ボタン
+exit_btn = tk.Button(root, text="終了", command=root.quit, bg="#ffdddd", width=10)
+exit_btn.pack(pady=5)
+
+root.mainloop()
+        </code></pre>
+    </div>
+
+    <div class="text-box1">
+        <h2>《 使用しているコード 》</h2>
+
+
+        ChatGPTを参考にコードを作成しました。
+    </div>
+
+    <div class="text-box1">
+        <h2>感想</h2>
+        今回の課題である人の心を動かすという点においては満足のいくものを完成させることができた。<br>
+        しかし、カッティング後に切り取るところの抜けを見つけたり、サイズを間違えていたりなど、すべきことを順序立ててまとめ、確認しながら進めたら起きないミスが多々あったため、それらには気を付けようと思った。
+    </div><br><br><br>
+
+</body>
