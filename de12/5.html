@@ -2,58 +2,105 @@
 <head>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>やぎの第４回</title>
-     <link rel="stylesheet" href="./css/4style.css">
+     <title>やぎの第５回</title>
+     <link rel="stylesheet" href="./css/5style.css">
 </head>
 
 <div class="bg_pattern stripe-background">
-    <style>
-.bg_pattern {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: #ffffff;
-  opacity: 0.4;
-  z-index: -1;
-}
-.Polka_v2 {
-  background-image:  radial-gradient(#acbdee 2px, transparent 2px), radial-gradient(#acbdee 2px, #ffffff 2px);
-  background-size: 40px 40px;
-  background-position: 0 0,20px 20px;
-}
-</style>
+<style>
+ .bg_pattern {
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    
+    z-index: -1;
+  }
+  .stripe-background{
+    background-color: #fff;
+    background-image: 
+        repeating-linear-gradient(45deg, rgba(160, 160, 160, 0.1) 0,rgba(160, 160, 160, 0.1) 2px,transparent 2px,transparent 40px),
+        repeating-linear-gradient(-45deg,rgba(160, 160, 160, 0.1) 0,rgba(160, 160, 160, 0.1) 2px,transparent 2px,transparent 40px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+  }
+  </style>
 </div>
 
-
 <body>
-    <div class="headar"><h1>　デザイン演習Ⅰ.Ⅱ　第４回</h1><br></div><br><br><br><br>
+    <div class="headar"><h1>　デザイン演習Ⅰ.Ⅱ　第５回</h1><br></div><br><br><br><br>
 
-        <h1 style="text-align:center"></h1>
+        <h1 style="text-align:center">プログラミング</h1>
     
     <div class="text-box1">
-        <h2>《 ストーリーボード 》</h2>
-        レーザーカッティングで人の心を動かすものという課題だったため、人を明るくさせるものを作りたいと考えた。<br>
-        何を作ろうかと迷っている際にギャンブル好きの推しがスロット配信をしているのを見て、スロットを作れたら面白いなと感じこの作品を作るに至った。<br><br>
-        　<img src="./images/slot.photo3.jpg"width="53%" alt="写真の説明">
-        　<img src="./images/slot.photo2.jpg"width="35%" alt="写真の説明">
+        <h2>《 うちなーぐちチャット 》</h2>
+        前回の課題で沖縄ネタに味をしめたので、今回は「AIとうちなーぐちで会話できる」プログラミングを考えました。
     </div>
 
-    <div class="text-box1">
-        <h2>作成過程</h2>
-        <img src="./files/slot.ai"><br>
-        <img src=""><br>
-        <img src="./files/slot3.ai">← 修正（切り抜き抜けがあった部分とサイズ間違えの部分）<br>
-        外側の長方形の箱と中の回る六角形の箱、押しボタンは
-        <a href="https://fabble.cc/fablabminatomirai/makercase">こちら</a>を参考にしました。
+    <div class="text-box2">
+        <h2>《 ソースコード 》</h2>
+        <pre><code>
+from openai import OpenAI
+
+#使用しているAPI
+client = OpenAI(api_key="")
+
+#AIへのお願い
+system_prompt = "標準語にうちなーぐち(沖縄方言)を交えて、若者らしいカジュアルな口調で応答してください。
+　　　　 　　　　ユーザーが質問したり話しかけたりした内容に合わせて、質問で返したり共感したりして会話を続けてください。
+　　　　 　　　　会話を終了するには、ユーザーが「終わり」という終了ワードを入力します。
+　　　　 　　　　その場合は、別れの挨拶と日常で使えるうちなーぐちや沖縄に関する豆知識を教えて、会話を終えてください。
+　　　　 　　　　もしユーザーが「うちなーぐちを強めにして」などの要望を出したら柔軟に調整してください。"
+
+def main():
+    messages = [{"role":"system", "content":system_prompt}]
+    print("‐‐‐‐‐‐‐‐‐‐‐‐‐うちなーぐちチャット‐‐‐‐‐‐‐‐‐‐‐‐‐\n（ 終わり で終了 ）")
+    while True:
+        user = input("あなた：").strip()
+        if not user:
+            continue
+        messages.append({"role":"user","content":user})
+
+        if any(word in user for word in ["終わり"]):
+            user += "(ユーザーが会話を終えたいと言っています。丁寧に終わりを伝えてください。)"
+            res = client.chat.completions.create(
+            model="gpt-4o-mini",
+            messages=messages,
+            temperature=0.8
+        )
+        res = client.chat.completions.create(
+        model="gpt-4o-mini",
+        messages=messages,
+        temperature=0.8
+        )
+        reply = res.choices[0].message.content.strip()
+        print(f"AI: {reply}")
+        messages.append({"role": "assistant", "content": reply})
+
+        if any(word in user for word in ["終わり"]):
+            break
+
+if __name__ == "__main__":
+    main()
+
+
+#ここがAPIです----------------------------
+response = client.chat.completions.create(
+    model="gpt-4o-mini",
+    messages=[{"role": "user", "content": system_prompt}]
+)
+#---------------------------------------
+        </code></pre>
     </div>
 
     <div class="text-box1">
         <h2>《 完成品 》</h2>
-        　　<img src="./images/slot.jpg"width="30%" alt="写真の説明">
-        <img src="./images/slot2.jpg"width="30%" alt="写真の説明">
-        <img src="./images/slot3.jpg"width="30%" alt="写真の説明">
+        
     </div>
 
     <div class="text-box1">
