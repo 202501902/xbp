@@ -26,13 +26,14 @@ html, body {
 .big-text{
     font-size: 40px;
 }
+.div{
+    text-align: center;
+}
 .container {
     margin-left: 20;
     padding: 0;
     display: flex;
-    gap: 10px; /* 写真と文章の間のスペース */
-    
-    
+    gap: 10px; /* 写真と文章の間のスペース */    
 }
 h1{
     text-indent: 0em;
