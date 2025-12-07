@@ -1,0 +1,91 @@
+html, body {
+
+    font-size: 16px;
+    font-family: sans-serif;
+    color:#343b55;
+    margin-left: 2;
+    padding: 0;
+    
+}
+*{
+    padding: 0;
+    margin: 0;
+    margin-left: 0;
+}
+.big-text{
+    font-size: 40px;
+}
+.container {
+    margin-left: 20;
+    padding: 0;
+    display: flex;
+    gap: 10px; /* 写真と文章の間のスペース */    
+}
+h1{
+    text-indent: 0em;
+    padding-top: 0.5em;
+    padding-bottom: 0em;
+}
+h2{
+    margin-left: 0em;
+    margin-bottom: 0.5em;
+    margin-top: 0em;
+}
+h3{
+    margin-top: 0.3em;
+    margin-bottom: 0.3em;
+}
+
+.box{
+    padding: 0em 0em;
+    margin: 0em;
+    margin-left: 0;
+    background: #f7fcff;
+    box-shadow: 0 0 10px #011c2c(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+.text-box1{    
+    padding: 2em 2em;
+    margin-left: 12em;
+    margin-right: 12em;
+    margin-bottom: 1em;
+    background: #f7fcff;
+    box-shadow: 0 2px 9px rgba(0, 208, 255, 0.1);
+    
+}
+.text-box2{
+    padding: 2em 2em;
+    margin-left: 12em;
+    margin-right: 12em;
+    margin-bottom: 1em;
+    background: #f7fcff;
+    box-shadow: 0 2px 9px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: left;
+    border-radius: 10px;
+}
+.headar {
+  position: fixed;
+  width: 100%;
+  background-color: #f7fcff;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.4rem 2rem;
+  margin: 0;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  text-align: center;
+  border-radius: 10px;
+}
+.phote-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
