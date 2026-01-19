@@ -95,3 +95,24 @@ h3{
     flex-wrap: wrap;
     gap: 10px;
 }
+
+/*スマホ*/
+/* 📱 スマホ対応 */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+  .navbar h1 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+  .navbar ul {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  main {
+    margin-top: 8rem;
+  }
+}
