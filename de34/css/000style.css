@@ -3,11 +3,21 @@ html, body {
     font-size: 16px;
     font-family: sans-serif;
     color:#343b55;
-    background-color: #fbfdfe;
     margin-left: 2;
     padding: 0;
     
 }
+.stripe-background{
+    height: 300px;
+    background-color: #fff;
+    background-image: 
+        repeating-linear-gradient(45deg, #d0d0d0 0,#d0d0d0 2px,transparent 2px,transparent 20px),
+        repeating-linear-gradient(-45deg,#d0d0d0 0,#d0d0d0 2px,transparent 2px,transparent 20px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+  }
 *{
     padding: 0;
     margin: 0;
@@ -15,6 +25,9 @@ html, body {
 }
 .big-text{
     font-size: 40px;
+}
+.div{
+    text-align: center;
 }
 .container {
     margin-left: 20;
@@ -36,6 +49,18 @@ h3{
     margin-top: 0.3em;
     margin-bottom: 0.3em;
 }
+div{
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 3em;
+    margin-right: 2em;
+}
+
+span.blackback{
+    text-indent: 3em;
+    background:#f7fcff;
+    color:#343b55;
+}
 
 .box{
     padding: 0em 0em;
@@ -46,14 +71,14 @@ h3{
     border-radius: 8px;
     text-align: center;
 }
-.text-box1{    
+.text-box1{
+    text-align: center;
     padding: 2em 2em;
     margin-left: 12em;
     margin-right: 12em;
     margin-bottom: 1em;
     background: #f7fcff;
     box-shadow: 0 2px 9px rgba(0, 0, 0, 0.1);
-    text-align: center;
     border-radius: 10px;
 }
 .text-box2{
@@ -65,11 +90,13 @@ h3{
     box-shadow: 0 2px 9px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     text-align: left;
-    border-radius: 10px;
 }
 .headar {
   position: fixed;
   width: 100%;
+  background-color: #f7fcff;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   z-index: 1000;
   display: flex;
   justify-content: space-between;
@@ -78,16 +105,8 @@ h3{
   margin: 0;
   box-sizing: border-box;
   flex-wrap: wrap;
-  border-radius: 10px;
-
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  background: rgba(255, 255, 255, 0.15);  /* ほぼ透明 */
-  backdrop-filter: blur(15px) saturate(180%);
-  -webkit-backdrop-filter: blur(15px) saturate(180%); 
-  background-color: #f7fcff;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   text-align: center;
-
+  border-radius: 10px;
 }
 .phote-box {
     display: flex;
@@ -95,43 +114,4 @@ h3{
     align-items: center;
     flex-wrap: wrap;
     gap: 10px;
-}
-
-section {
-  display: flex;
-  justify-content: flex-start;
-  gap: 40px;
-  max-width: 900px;
-  margin: 60px auto;
-  margin-top: auto;
-  margin-bottom: auto;
-  padding: 20px;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  position: relative; /* 線を中央に固定するために必要 */
-}
-.section-top {
-    display: flex;
-    justify-content: center;
-    gap: 50px;
-}
-
-/*スマホ*/
-@media (max-width: 600px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1rem;
-  }
-  .navbar h1 {
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-  }
-  .navbar ul {
-    flex-direction: column;
-    gap: 0.6rem;
-  }
-  main {
-    margin-top: 8rem;
-  }
 }
