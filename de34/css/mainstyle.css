@@ -57,6 +57,7 @@ h3{
     border-radius: 10px;
 }
 .text-box2{
+    display: inline-block;
     padding: 2em 2em;
     margin-left: 12em;
     margin-right: 12em;
@@ -67,6 +68,19 @@ h3{
     text-align: left;
     border-radius: 10px;
 }
+
+.cord{
+    padding: 2em 2em;
+    margin-left: 12em;
+    margin-right: 12em;
+    margin-bottom: 1em;
+    background: #f1f9fd;
+    box-shadow: 0 2px 9px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: left;
+    border-radius: 10px;
+}
+
 .headar {
   position: fixed;
   width: 100%;
@@ -134,4 +148,33 @@ section {
   main {
     margin-top: 8rem;
   }
+}
+
+/*コードコピー用のやつ*/
+.code-box {
+  position: relative;
+  background: #1e1e1e;
+  color: #cfcfcf;
+  padding: 16px;
+  border-radius: 8px;
+  font-family: Consolas, Monaco, 'Courier New', monospace;
+  overflow-x: auto;
+}
+
+.copy-btn {
+  position: absolute;
+  text-align: left;
+  top: 8px;
+  right: 8px;
+  background: #333;
+  color: #fff;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.copy-btn:hover {
+  background: #555;
 }

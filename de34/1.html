@@ -14,14 +14,115 @@
     
     <div class="text-box1">
         <h2 style="text-align:center">Arduinoの基本</h2>
-        <p></p>
-        
+        <p>
+            Arduinoとは入出力ポートがあるマイコンボードである。<br>
+            プログラムを書くことで、電子工作といわれることが簡単にできる。<br>
+            例：センサーの値を読み込む。モーター動かす。LEDを光らせる。<br><br>
+            ArduinoとPCはUSBで接続する。(付属のケーブルはtypeA)<br>
+            Arduino Unoというボード上でプログラムを書く。
+        </p>
     </div><br>
 
+
     <div class="text-box1">
-        <h2 style="text-align:center">感想</h2>
-        <p></p>
-        
+        <h2 style="text-align:center">Lチカ</h2>
+        <h4>LEDを光らせる</h4><br>
+        <div class="text-box2">
+            <pre><code>
+    void setup() {
+       pinMode(13, OUTPUT);
+    }
+
+    void loop() {
+      digitalWrite(13, HIGH);
+      delay(500);
+      digitalWrite(13, LOW);
+      delay(500);
+    }
+            </code></pre>
+        </div>
+
+        <p>
+            ◎void：実行される回数<br>
+            setup：最初に一回だけ実行されるプログラム<br>
+            loop：ずっと繰り返し実行されるプログラム<br><br>
+
+            ;(セミコロン)：基本的に命令文の最後につける<br><br>
+
+            pinMode：指定したピンを入力用に使うのか、出力用に使うのかを設定する<br>
+            LEDを点灯させるために13番ピンから電気を流したい（出力したい）→pinMode(13,OUTPUT);<br>
+        </p><br><br>
+    
+        <h4>LEDを点滅させる</h4><br>
+        <p>
+            0.3秒ごとの点滅を10回繰り返し、その後２秒ごとの点滅を３回繰り返す、というプログラム。<br>
+            最後まで実行されたら、また同じことの繰り返し。<br>
+        </p><br>
+        <div class="text-box2">
+            <pre><code>
+    void setup() {
+      // put your setup code here, to run once:
+      pinMode(13,OUTPUT);
+    }
+
+    void loop() {
+      // put your main code here, to run repeatedly:
+      for(int i=0; i < 10; i++){
+        digitalWrite(13,HIGH);
+        delay(300);
+        digitalWrite(13,LOW);
+        delay(300);
+      }
+  
+      for(int i=0; i < 3; i++){
+        digitalWrite(13,HIGH);
+        delay(2000);
+        digitalWrite(13,LOW);
+        delay(2000);
+      }
+
+    }
+            </code></pre>
+        </div><br>
+
+        <h2>for文とif文</h2>
+        <h4>for文</h4><br>
+        <div class="text-box2">
+            <pre><code>
+    for (初期化式; 条件式; 変化式){
+      // 繰り返しの中で実行される処理
+    }
+            </code></pre>
+        </div>
+        <h4>使用例</h4><br>
+        <div class="text-box2">
+            <pre><code>
+    for(int i=0; i < 3; i++){
+      // 繰り返しの中で実行される処理
+    }
+            </code></pre>
+        </div>
+        <p>
+            iという変数で繰り返しを判断する<br>
+            iは0から始まる<br>
+            iが３未満の間は繰り返す（0から始まるので、３回の繰り返しになることに注意）<br>
+            i++はiが１ずつ足される（数を１，２，３と数えている感じ）<br>
+
+        </p><br>
+
+        <h4>if文</h4><br>
+        <div class="text-box2">
+            <pre><code>
+    if (条件式){
+    　処理内容1 　//条件式を満たす場合にのみ実行する
+    }
+    else{
+    　処理内容2 　//条件式を満たさない場合にのみ実行される
+    }
+            </code></pre>
+        </div>
+              
     </div><br>
+
 
 </body>
