@@ -43,14 +43,24 @@
         </div>
 
         <p>
-            ◎void：実行される回数<br>
-            setup：最初に一回だけ実行されるプログラム<br>
-            loop：ずっと繰り返し実行されるプログラム<br><br>
+            <strong>void</strong>：実行される回数<br>
+            <strong>setup</strong>：最初に一回だけ実行されるプログラム<br>
+            <strong>loop</strong>：ずっと繰り返し実行されるプログラム<br><br>
 
-            ;(セミコロン)：基本的に命令文の最後につける<br><br>
+            <strong>;(セミコロン)</strong>：基本的に命令文の最後につける<br><br>
 
-            pinMode：指定したピンを入力用に使うのか、出力用に使うのかを設定する<br>
-            LEDを点灯させるために13番ピンから電気を流したい（出力したい）→pinMode(13,OUTPUT);<br>
+            <strong>pinMode</strong>：指定したピンを入力用に使うのか、出力用に使うのかを設定する<br>
+            LEDを点灯させるために13番ピンから電気を流したい（出力したい）→pinMode(13,OUTPUT);<br><br>
+
+            <strong>digitalWrite</strong>：デジタルピンの出力をLOWかHIGHで設定する<br>
+            LOW  → 0V　（電流が流れなくてLEDがつかない）<br>
+            HIGH → 5V　（電流が流れてLEDがつく）<br><br>
+
+            <strong>delay</strong>：指定した時間待つ命令。単位はミリ秒(ms)<br>
+            例)<br>
+            delay(1000)→1秒待つ (1000/1000=1)<br>
+            delay(100)→0.1秒待つ(100/1000=0.1)<br>
+            delay(10)→0.01秒待つ(10/1000=0.01)<br>
         </p><br><br>
     
         <h4>LEDを点滅させる</h4><br>
@@ -86,7 +96,7 @@
         </div><br>
 
         <h2>for文とif文</h2>
-        <h4>for文</h4><br>
+        <h3>for文</h3>
         <div class="text-box2">
             <pre><code>
     for (初期化式; 条件式; 変化式){
@@ -94,7 +104,7 @@
     }
             </code></pre>
         </div>
-        <h4>使用例</h4><br>
+        <h3>使用例</h3>
         <div class="text-box2">
             <pre><code>
     for(int i=0; i < 3; i++){
@@ -110,7 +120,7 @@
 
         </p><br>
 
-        <h4>if文</h4><br>
+        <h3>if文</h3>
         <div class="text-box2">
             <pre><code>
     if (条件式){
@@ -123,6 +133,34 @@
         </div>
               
     </div><br>
+
+    <div class="text-box1">
+        <h2 style="text-align:center">明るさを測定してLEDを光らせる</h2>
+        <h4></h4><br>
+        <div class="text-box2">
+            <pre><code>
+    void setup() {
+      // put your setup code here, to run once:
+      Serial.begin(9600);
+    }
+
+    void loop() {
+      // put your main code here, to run repeatedly:
+      int val=0;
+      val=analogRead(1);
+      Serial.println(val);
+      delay(500);
+  
+    }
+        </code></pre>
+        </div>
+
+        <p>
+            <strong>アナログ</strong>：0〜5Vの値の間のどの値でも取れる、連続した値<br>
+            <strong>val</strong>：箱のイメージ。今回はアナログ１番ピン(A1)の値を入れる（読む）。
+        </p>
+
+    </div>
 
 
 </body>
