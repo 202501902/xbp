@@ -58,11 +58,13 @@ h3{
 }
 .text-box2{
     display: inline-block;
-    padding: 2em 2em;
-    margin-left: 12em;
-    margin-right: 12em;
-    margin-bottom: 1em;
-    background: #f7fcff;
+    padding-left: 3em;
+    padding-right: 3em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    text-align: center;
+    background: #292f43;
+    color: #e9f5fc;
     box-shadow: 0 2px 9px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     text-align: left;

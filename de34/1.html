@@ -29,18 +29,18 @@
         <h4>LEDを光らせる</h4><br>
         <div class="text-box2">
             <pre><code>
-    void setup() {
-       pinMode(13, OUTPUT);
-    }
+void setup() {
+   pinMode(13, OUTPUT);
+}
 
-    void loop() {
-      digitalWrite(13, HIGH);
-      delay(500);
-      digitalWrite(13, LOW);
-      delay(500);
-    }
+void loop() {
+  digitalWrite(13, HIGH);
+  delay(500);
+  digitalWrite(13, LOW);
+  delay(500);
+}
             </code></pre>
-        </div>
+        </div><br><br>
 
         <p>
             <strong>void</strong>：実行される回数<br>
@@ -61,7 +61,7 @@
             delay(1000)→1秒待つ (1000/1000=1)<br>
             delay(100)→0.1秒待つ(100/1000=0.1)<br>
             delay(10)→0.01秒待つ(10/1000=0.01)<br>
-        </p><br><br>
+        </p><br>
     
         <h4>LEDを点滅させる</h4><br>
         <p>
@@ -70,48 +70,51 @@
         </p><br>
         <div class="text-box2">
             <pre><code>
-    void setup() {
-      // put your setup code here, to run once:
-      pinMode(13,OUTPUT);
-    }
+void setup() {
+  // put your setup code here, to run once:
+  pinMode(13,OUTPUT);
+}
 
-    void loop() {
-      // put your main code here, to run repeatedly:
-      for(int i=0; i < 10; i++){
-        digitalWrite(13,HIGH);
-        delay(300);
-        digitalWrite(13,LOW);
-        delay(300);
-      }
+void loop() {
+  // put your main code here, to run repeatedly:
+  for(int i=0; i < 10; i++){
+    digitalWrite(13,HIGH);
+    delay(300);
+    digitalWrite(13,LOW);
+    delay(300);
+  }
   
-      for(int i=0; i < 3; i++){
-        digitalWrite(13,HIGH);
-        delay(2000);
-        digitalWrite(13,LOW);
-        delay(2000);
-      }
+  for(int i=0; i < 3; i++){
+    digitalWrite(13,HIGH);
+    delay(2000);
+    digitalWrite(13,LOW);
+    delay(2000);
+  }
 
-    }
+}
             </code></pre>
         </div><br>
 
+    </div><br>
+
+    <div class="text-box1">
         <h2>for文とif文</h2>
         <h3>for文</h3>
         <div class="text-box2">
             <pre><code>
-    for (初期化式; 条件式; 変化式){
-      // 繰り返しの中で実行される処理
-    }
+for (初期化式; 条件式; 変化式){
+  // 繰り返しの中で実行される処理
+}
             </code></pre>
         </div>
         <h3>使用例</h3>
         <div class="text-box2">
             <pre><code>
-    for(int i=0; i < 3; i++){
-      // 繰り返しの中で実行される処理
-    }
+for(int i=0; i < 3; i++){
+  // 繰り返しの中で実行される処理
+}
             </code></pre>
-        </div>
+        </div><br><br>
         <p>
             iという変数で繰り返しを判断する<br>
             iは0から始まる<br>
@@ -123,12 +126,12 @@
         <h3>if文</h3>
         <div class="text-box2">
             <pre><code>
-    if (条件式){
-    　処理内容1 　//条件式を満たす場合にのみ実行する
-    }
-    else{
-    　処理内容2 　//条件式を満たさない場合にのみ実行される
-    }
+if (条件式){
+　処理内容1 　//条件式を満たす場合にのみ実行する
+}
+else{
+　処理内容2 　//条件式を満たさない場合にのみ実行される
+}
             </code></pre>
         </div>
               
@@ -136,24 +139,24 @@
 
     <div class="text-box1">
         <h2 style="text-align:center">明るさを測定してLEDを光らせる</h2>
-        <h4></h4><br>
+        <h4></h4>
         <div class="text-box2">
             <pre><code>
-    void setup() {
-      // put your setup code here, to run once:
-      Serial.begin(9600);
-    }
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(9600);
+}
 
-    void loop() {
-      // put your main code here, to run repeatedly:
-      int val=0;
-      val=analogRead(1);
-      Serial.println(val);
-      delay(500);
+void loop() {
+  // put your main code here, to run repeatedly:
+  int val=0;
+  val=analogRead(1);
+  Serial.println(val);
+  delay(500);
   
-    }
+}
         </code></pre>
-        </div>
+        </div><br><br>
 
         <p>
             <strong>アナログ</strong>：0〜5Vの値の間のどの値でも取れる、連続した値<br>
