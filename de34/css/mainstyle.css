@@ -70,7 +70,15 @@ h3{
     text-align: left;
     border-radius: 10px;
 }
-
+.photo{
+  display: inline-block;
+}
+.photo img{
+    display: block;
+    box-shadow: 0 2px 9px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    height: auto;  
+}
 .cord{
     padding: 2em 2em;
     margin-left: 12em;

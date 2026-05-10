@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>やぎの第３回</title>
+     <link rel="stylesheet" href="./css/mainstyle.css">
+</head>
+
+
+<body>
+    <div class="headar"><h1>　デザイン演習Ⅲ・Ⅳ　第3回</h1></div><br><br><br><br>
+    <h1 style="text-align:center">Flask</h1><br>
+    
+    <div class="text-box1">
+        <h2 style="text-align:center">Flaskの基本</h2>
+        <p>
+            PythonでWebサイトやAPIを開発するための小規模フレームワークである。<br>
+            必要最低限の機能だけを備えており、開発者が自由に機能を追加しながらアプリを作れる。<br>
+            作成例：Webサイト、ブログ、管理画面、AIアプリのWeb UI、社内ツール<br><br>
+            <h2>webサイトの仕組み</h2>
+            <div class="photo"><img src="./images/end (2).png" alt="写真の説明"></div>
+        </p>
+    </div><br>
+
+    <div class="text-box1">
+        <h2 style="text-align:center">プログラム例</h2>
+        <h3>今日の運勢アプリ</h3><br>
+        <h3>python</h3>
+        <div class="text-box2">
+            <pre><code>
+from flask import Flask, render_template, request
+import random
+
+app = Flask(__name__)
+
+# 運勢のリスト
+fortunes = [
+    "大吉！！！",
+    "吉！！",
+    "中吉！！",
+    "小吉！",
+    "末吉！",
+    "凶..."
+]
+
+@app.route("/", methods=["GET", "POST"])
+def index():
+
+    result = ""
+
+    # ボタンが押された時
+    if request.method == "POST":
+
+        # ランダムで1つ選ぶ
+        result = random.choice(fortunes)
+
+    return render_template("index.html", result=result)
+
+if __name__ == "__main__":
+    app.run(debug=True)
+
+            </code></pre>
+        </div><br><br>
+        <h3>html</h3>
+        <div class="text-box2">
+            <pre><code>
+＜!DOCTYPE html>
+＜html lang="ja">
+＜head>
+    ＜meta charset="UTF-8">
+    ＜title>今日の運勢＜/title>
+＜/head>
+＜body>
+
+    ＜h1>今日の運勢アプリ＜/h1>
+
+    ＜form method="POST">
+        ＜button type="submit">運勢を占う＜/button>
+    ＜/form>
+
+    ＜h2>{{ result }}＜/h2>
+
+＜/body>
+＜/html>
+
+            </code></pre>
+        </div><br><br>
+
+
+    </div>
+
+
+</body>
