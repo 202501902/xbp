@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>やぎの第４回</title>
+     <link rel="stylesheet" href="./css/mainstyle.css">
+</head>
+
+
+<body>
+    <div class="headar"><h1>　デザイン演習Ⅲ・Ⅳ　第4回</h1></div><br><br><br><br>
+    <h1 style="text-align:center">Flask</h1><br>
+    
+    <div class="text-box1">
+        <h2 style="text-align:center">今日の星座占い</h2>
+        <p>
+            恋愛運、金運、勉強運、ラッキーカラーとアイテム、今日のランキング<br>
+            日付ごとに結果を固定している。同じ日に結果を見ても同じ結果。<br>
+        </p>
+    </div>
+
+    <div class="text-box1">
+        <h2 style="text-align:center">感想</h2>
+        <p>
+            
+        </p>
+    </div>
+
+    <div class="text-box1">
+        <h3>Python</h3>
+        <div class="text-box2">
+            <pre><code>
+import random
+import json
+from datetime import datetime
+from flask import Flask, render_template, request
+from openai import OpenAI
+
+app = Flask(__name__)
+
+client = OpenAI(
+    api_key=""
+)
+
+ZODIACS = [
+    "牡羊座","牡牛座","双子座","蟹座",
+    "獅子座","乙女座","天秤座","蠍座",
+    "射手座","山羊座","水瓶座","魚座"
+]
+
+
+def get_seed():
+    return datetime.now().strftime("%Y-%m-%d")
+
+
+def generate_fortune(zodiac, seed):
+
+    prompt = f"""
+あなたは魔法の占い師です。
+
+{zodiac}の今日の運勢を以下のJSON形式で返してください：
+
+{{
+  "love": "恋愛運（100文字以内）",
+  "money": "金運（100文字以内）",
+  "study": "勉強運（100文字以内）",
+  "lucky_color": "ラッキーカラー",
+  "lucky_item": "ラッキーアイテム"
+}}
+
+必ず日本語で、ポジティブにしてください。
+"""
+
+    random.seed(seed + zodiac)
+
+    res = client.chat.completions.create(
+        model="gpt-4.1-mini",
+        messages=[{"role": "user", "content": prompt}]
+    )
+
+    text = res.choices[0].message.content
+
+    # JSON化（多少崩れても対応）
+    try:
+        return json.loads(text)
+    except:
+        return {
+            "love": text,
+            "money": "",
+            "study": "",
+            "lucky_color": "不明",
+            "lucky_item": "不明"
+        }
+
+
+def generate_ranking(seed):
+    random.seed(seed)
+    shuffled = ZODIACS.copy()
+    random.shuffle(shuffled)
+
+    return [{"rank": i+1, "zodiac": z} for i, z in enumerate(shuffled)]
+
+
+@app.route("/", methods=["GET", "POST"])
+def index():
+    seed = get_seed()
+    selected = None
+    fortune = None
+    ranking = None
+
+    if request.method == "POST":
+        selected = request.form.get("zodiac")
+        fortune = generate_fortune(selected, seed)
+        ranking = generate_ranking(seed)
+
+    return render_template(
+        "index.html",
+        zodiacs=ZODIACS,
+        selected=selected,
+        fortune=fortune,
+        ranking=ranking,
+        today=seed
+    )
+
+
+if __name__ == "__main__":
+    app.run(
+        host="0.0.0.0",
+        port=3000,
+        debug=True
+    )
+
+
+            </code></pre>
+        </div><br><br>
+        <h3>html</h3>
+        <div class="text-box2">
+            <pre><code>
+&lt;!DOCTYPE html>
+&lt;html lang="ja">
+&lt;head>
+&lt;meta charset="UTF-8">
+&lt;title>魔法の星座占い&lt;/title>
+
+&lt;style>
+body {
+    font-family: "Hiragino Maru Gothic ProN", sans-serif;
+    background: radial-gradient(circle at top, #ffd6ff, #c1f0ff);
+    text-align: center;
+    margin: 0;
+    color: #444;
+}
+
+.card {
+    background: white;
+    max-width: 420px;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+button {
+    padding: 12px;
+    width: 80%;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg,#ff9a9e,#fad0c4);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+select {
+    padding: 10px;
+    width: 80%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/* ローディング */
+#loading {
+    display: none;
+    margin-top: 20px;
+}
+
+.magic {
+    font-size: 30px;
+    animation: float 1.2s infinite ease-in-out;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); opacity: 0.4; }
+    50% { transform: translateY(-10px); opacity: 1; }
+    100% { transform: translateY(0); opacity: 0.4; }
+}
+
+/* 結果 */
+.result {
+    margin-top: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: appear 0.8s forwards;
+}
+
+@keyframes appear {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.box {
+    background: #fff7fb;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 12px;
+}
+.ranking {
+    margin-top: 15px;
+    text-align: left;
+}
+.rank-item {
+    background: #fff;
+    margin: 8px 0;
+    padding: 10px 14px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+&lt;/style>
+&lt;/head>
+
+&lt;body>
+
+&lt;div class="card">
+
+&lt;h1>🔮 魔法の星座占い&lt;/h1>
+&lt;p>📅 {{ today }}&lt;/p>
+
+&lt;form method="POST" onsubmit="showMagic()">
+    &lt;select name="zodiac" required>
+        &lt;option value="">星座を選択&lt;/option>
+        {% for z in zodiacs %}
+            &lt;option value="{{ z }}" {% if selected == z %}selected{% endif %}>
+                {{ z }}
+            &lt;/option>
+        {% endfor %}
+    &lt;/select>
+
+    &lt;button type="submit">今日の運勢を占う ✨&lt;/button>
+&lt;/form>
+
+&lt;div id="loading">
+    &lt;div class="magic">🔮✨🌙&lt;/div>
+    &lt;p>占い中…&lt;/p>
+&lt;/div>
+
+{% if fortune %}
+&lt;div class="result">
+
+    &lt;div class="box">
+        &lt;h3>💘 恋愛運&lt;/h3>
+        &lt;p>{{ fortune.love }}&lt;/p>
+    &lt;/div>
+
+    &lt;div class="box">
+        &lt;h3>💰 金運&lt;/h3>
+        &lt;p>{{ fortune.money }}&lt;/p>
+    &lt;/div>
+
+    &lt;div class="box">
+        &lt;h3>📚 勉強運&lt;/h3>
+        &lt;p>{{ fortune.study }}&lt;/p>
+    &lt;/div>
+
+    &lt;div class="box">
+        &lt;h3>🌟 ラッキー&lt;/h3>
+        &lt;p>カラー：{{ fortune.lucky_color }}&lt;/p>
+        &lt;p>アイテム：{{ fortune.lucky_item }}&lt;/p>
+    &lt;/div>
+
+    &lt;h3>👑 今日のランキング&lt;/h3>
+    &lt;div class="ranking">
+    {% for item in ranking %}
+        &lt;div class="rank-item">
+            {{ item.rank }}位：{{ item.zodiac }}
+        &lt;/div>
+    {% endfor %}
+    &lt;/div>
+
+&lt;/div>
+{% endif %}
+
+&lt;/div>
+
+&lt;script>
+function showMagic() {
+    document.getElementById("loading").style.display = "block";
+}
+&lt;/script>
+
+&lt;/body>
+&lt;/html>
+
+            </code></pre>
+        </div><br><br>
+
+
+    </div>
+
+
+</body>
