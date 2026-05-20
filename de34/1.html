@@ -3,17 +3,28 @@
 <head>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>やぎの第１回</title>
-     <link rel="stylesheet" href="./css/mainstyle.css">
+     <title>やぎの第1回</title>
+     <link rel="stylesheet" href="./css/maincute.css">
 </head>
 
 
 <body>
-    <div class="headar"><h1>　デザイン演習Ⅲ・Ⅳ　第1回</h1></div><br><br><br><br>
-    <h1 style="text-align:center">Arduino</h1><br>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap" rel="stylesheet">
+    <div class="headar" ><h1>　デザイン演習Ⅲ・Ⅳ　第1回</h1></div>
+    <h1 style="text-align:center">Arduino</h1>
+
+    <div class="table-box">
+        <h2 style="text-align:center">目次</h2>
+        <ul class="table-list">
+            <li><a href="#basic">Arduinoの基本</a></li>
+            <li><a href="#ltika">Lチカ</a></li>
+            <li><a href="#for">for文とif文</a></li>
+            <li><a href="#led">明るさを測定してLEDを光らせる</a></li>
+        </ul>
+    </div><br>
     
     <div class="text-box1">
-        <h2 style="text-align:center">Arduinoの基本</h2>
+        <h2 style="text-align:center" id="basic">Arduinoの基本</h2>
         <p>
             Arduinoとは入出力ポートがあるマイコンボードである。<br>
             プログラムを書くことで、電子工作といわれることが簡単にできる。<br>
@@ -25,8 +36,8 @@
 
 
     <div class="text-box1">
-        <h2 style="text-align:center">Lチカ</h2>
-        <h4>LEDを光らせる</h4><br>
+        <h2 style="text-align:center" id="ltika">Lチカ</h2>
+        <h4>LEDを光らせる</h4>
         <div class="text-box2">
             <pre><code>
 void setup() {
@@ -40,7 +51,7 @@ void loop() {
   delay(500);
 }
             </code></pre>
-        </div><br><br>
+        </div><br>
 
         <p>
             <strong>void</strong>：実行される回数<br>
@@ -63,11 +74,11 @@ void loop() {
             delay(10)→0.01秒待つ(10/1000=0.01)<br>
         </p><br>
     
-        <h4>LEDを点滅させる</h4><br>
+        <h4>LEDを点滅させる</h4>
         <p>
             0.3秒ごとの点滅を10回繰り返し、その後２秒ごとの点滅を３回繰り返す、というプログラム。<br>
             最後まで実行されたら、また同じことの繰り返し。<br>
-        </p><br>
+        </p>
         <div class="text-box2">
             <pre><code>
 void setup() {
@@ -97,8 +108,8 @@ void loop() {
 
     </div><br>
 
-    <div class="text-box1">
-        <h2>for文とif文</h2>
+    <div class="text-box1" id="for">
+        <h2 style="text-align:center">for文とif文</h2>
         <h3>for文</h3>
         <div class="text-box2">
             <pre><code>
@@ -114,14 +125,14 @@ for(int i=0; i < 3; i++){
   // 繰り返しの中で実行される処理
 }
             </code></pre>
-        </div><br><br>
+        </div>
         <p>
             iという変数で繰り返しを判断する<br>
             iは0から始まる<br>
             iが３未満の間は繰り返す（0から始まるので、３回の繰り返しになることに注意）<br>
             i++はiが１ずつ足される（数を１，２，３と数えている感じ）<br>
 
-        </p><br>
+        </p>
 
         <h3>if文</h3>
         <div class="text-box2">
@@ -133,11 +144,11 @@ else{
 　処理内容2 　//条件式を満たさない場合にのみ実行される
 }
             </code></pre>
-        </div>
+        </div><br>
               
     </div><br>
 
-    <div class="text-box1">
+    <div class="text-box1" id="led">
         <h2 style="text-align:center">明るさを測定してLEDを光らせる</h2>
         <h4></h4>
         <div class="text-box2">
@@ -156,14 +167,14 @@ void loop() {
   
 }
         </code></pre>
-        </div><br><br>
+        </div><br>
 
         <p>
             <strong>アナログ</strong>：0〜5Vの値の間のどの値でも取れる、連続した値<br>
             <strong>val</strong>：箱のイメージ。今回はアナログ１番ピン(A1)の値を入れる（読む）。
         </p>
 
-    </div>
+    </div><br>
 
 
 </body>

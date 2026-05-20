@@ -3,29 +3,37 @@
 <head>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>やぎの第３回</title>
-     <link rel="stylesheet" href="./css/mainstyle.css">
+     <title>やぎの第3回</title>
+     <link rel="stylesheet" href="./css/maincute.css">
 </head>
 
 
 <body>
-    <div class="headar"><h1>　デザイン演習Ⅲ・Ⅳ　第3回</h1></div><br><br><br><br>
-    <h1 style="text-align:center">Flask</h1><br>
+    <div class="headar"><h1>　デザイン演習Ⅲ・Ⅳ　第3回</h1></div>
+    <h1 style="text-align:center">Flask</h1>
     
+    <div class="table-box">
+        <h2 style="text-align:center">目次</h2>
+        <ul class="table-list">
+            <li><a href="#basic">Flaskの基本</a></li>
+            <li><a href="#program">プログラム例</a></li>
+        </ul>
+    </div><br>
+
     <div class="text-box1">
-        <h2 style="text-align:center">Flaskの基本</h2>
+        <h2 style="text-align:center" id="basic">Flaskの基本</h2>
         <p>
             PythonでWebサイトやAPIを開発するための小規模フレームワークである。<br>
             必要最低限の機能だけを備えており、開発者が自由に機能を追加しながらアプリを作れる。<br>
             作成例：Webサイト、ブログ、管理画面、AIアプリのWeb UI、社内ツール<br><br>
-            <h2>webサイトの仕組み</h2>
+            <h2 style="text-align:center">webサイトの仕組み</h2>
             <div class="photo"><img src="./images/end (2).png" alt="写真の説明"></div>
         </p>
     </div><br>
 
-    <div class="text-box1">
+    <div class="text-box1" id="program">
         <h2 style="text-align:center">プログラム例</h2>
-        <h3>今日の運勢アプリ</h3><br>
+        <h3>今日の運勢アプリ</h3>
         <h3>python</h3>
         <div class="text-box2">
             <pre><code>
@@ -61,7 +69,7 @@ if __name__ == "__main__":
     app.run(debug=True)
 
             </code></pre>
-        </div><br><br>
+        </div><br>
         <h3>html</h3>
         <div class="text-box2">
             <pre><code>
@@ -85,10 +93,10 @@ if __name__ == "__main__":
 ＜/html>
 
             </code></pre>
-        </div><br><br>
+        </div><br>
 
 
-    </div>
+    </div><br>
 
 
 </body>

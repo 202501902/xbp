@@ -4,21 +4,30 @@
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>やぎの第2回</title>
-     <link rel="stylesheet" href="./css/mainstyle.css">
+     <link rel="stylesheet" href="./css/maincute.css">
 </head>
 
 
 <body>
-    <div class="headar"><h1>　デザイン演習Ⅲ・Ⅳ　第2回</h1></div><br><br><br><br>
-    <h1 style="text-align:center">Arduino</h1><br>  
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap" rel="stylesheet">
+    <div class="headar"><h1>　デザイン演習Ⅲ・Ⅳ　第2回</h1></div>
+    <h1 style="text-align:center">Arduino</h1>
+
+    <div class="table-box">
+      <h2 style="text-align:center">目次</h2>
+      <ul class="table-list">
+        <li><a href="#basic">メリーゴーランド</a></li>
+        <li><a href="#kannsei">完成品</a></li>
+      </ul>
+    </div><br>
 
     <div class="text-box1">
-        <h2 style="text-align:center">メリーゴーランド</h2>
+        <h2 style="text-align:center" id="basic">メリーゴーランド</h2>
         <h3>設定</h3>
         <p>
             モーター：一定の速度と方向で回る。<br>
             NeoPixel：モーターが200ステップ（約1周）したらLEDの色が変わる。
-        </p><br>
+        </p>
     <div class="text-box2">
         <pre><code>
 #include ＜Adafruit_NeoPixel.h＞
@@ -99,12 +108,14 @@ void updateColor() {
   pixels.show();
 }
         </code></pre>
-    </div>    
+    </div><br>    
     </div><br>
 
-    <div class="text-box1">
+    <div class="text-box1" id="kannsei">
         <h2 style="text-align:center">完成品</h2>
-        <img src="./images/meri-go-rando.jpg"width="60%" alt="写真の説明"><br>
+        <div class="photo">
+          <img src="./images/meri-go-rando.jpg" alt="写真の説明">
+        </div><br>
         <div class="video">
           <iframe width="560" height="315" src="https://www.youtube.com/embed/KyqiGM-6B3Y?si=GzN4Vw3rEWi_ecHK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
